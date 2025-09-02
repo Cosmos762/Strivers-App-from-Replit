@@ -1,0 +1,169 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(220, 13%, 9%);
+  --foreground: hsl(0, 0%, 95%);
+  --card: hsl(220, 13%, 12%);
+  --card-foreground: hsl(0, 0%, 95%);
+  --popover: hsl(220, 13%, 12%);
+  --popover-foreground: hsl(0, 0%, 95%);
+  --primary: hsl(24, 90%, 53%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(220, 13%, 15%);
+  --secondary-foreground: hsl(0, 0%, 95%);
+  --muted: hsl(220, 13%, 15%);
+  --muted-foreground: hsl(0, 0%, 65%);
+  --accent: hsl(220, 13%, 15%);
+  --accent-foreground: hsl(0, 0%, 95%);
+  --destructive: hsl(0, 62%, 50%);
+  --destructive-foreground: hsl(0, 0%, 95%);
+  --border: hsl(220, 13%, 18%);
+  --input: hsl(220, 13%, 15%);
+  --ring: hsl(24, 90%, 53%);
+  --chart-1: hsl(24, 90%, 53%);
+  --chart-2: hsl(173, 58%, 39%);
+  --chart-3: hsl(197, 37%, 24%);
+  --chart-4: hsl(43, 74%, 66%);
+  --chart-5: hsl(27, 87%, 67%);
+  --sidebar: hsl(220, 13%, 12%);
+  --sidebar-foreground: hsl(0, 0%, 95%);
+  --sidebar-primary: hsl(24, 90%, 53%);
+  --sidebar-primary-foreground: hsl(0, 0%, 100%);
+  --sidebar-accent: hsl(220, 13%, 15%);
+  --sidebar-accent-foreground: hsl(0, 0%, 95%);
+  --sidebar-border: hsl(220, 13%, 18%);
+  --sidebar-ring: hsl(24, 90%, 53%);
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-serif: Georgia, serif;
+  --font-mono: 'Courier New', monospace;
+  --radius: 8px;
+  --shadow-2xs: 0px 2px 0px 0px hsl(24, 90%, 53%, 0.00);
+  --shadow-xs: 0px 2px 0px 0px hsl(24, 90%, 53%, 0.00);
+  --shadow-sm: 0px 2px 0px 0px hsl(24, 90%, 53%, 0.00), 0px 1px 2px -1px hsl(24, 90%, 53%, 0.00);
+  --shadow: 0px 2px 0px 0px hsl(24, 90%, 53%, 0.00), 0px 1px 2px -1px hsl(24, 90%, 53%, 0.00);
+  --shadow-md: 0px 2px 0px 0px hsl(24, 90%, 53%, 0.00), 0px 2px 4px -1px hsl(24, 90%, 53%, 0.00);
+  --shadow-lg: 0px 2px 0px 0px hsl(24, 90%, 53%, 0.00), 0px 4px 6px -1px hsl(24, 90%, 53%, 0.00);
+  --shadow-xl: 0px 2px 0px 0px hsl(24, 90%, 53%, 0.00), 0px 8px 10px -1px hsl(24, 90%, 53%, 0.00);
+  --shadow-2xl: 0px 2px 0px 0px hsl(24, 90%, 53%, 0.00);
+  --tracking-normal: 0em;
+  --spacing: 0.25rem;
+}
+
+.dark {
+  --background: hsl(220, 13%, 9%);
+  --foreground: hsl(0, 0%, 95%);
+  --card: hsl(220, 13%, 12%);
+  --card-foreground: hsl(0, 0%, 95%);
+  --popover: hsl(220, 13%, 12%);
+  --popover-foreground: hsl(0, 0%, 95%);
+  --primary: hsl(24, 90%, 53%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(220, 13%, 15%);
+  --secondary-foreground: hsl(0, 0%, 95%);
+  --muted: hsl(220, 13%, 15%);
+  --muted-foreground: hsl(0, 0%, 65%);
+  --accent: hsl(220, 13%, 15%);
+  --accent-foreground: hsl(0, 0%, 95%);
+  --destructive: hsl(0, 62%, 50%);
+  --destructive-foreground: hsl(0, 0%, 95%);
+  --border: hsl(220, 13%, 18%);
+  --input: hsl(220, 13%, 15%);
+  --ring: hsl(24, 90%, 53%);
+  --chart-1: hsl(24, 90%, 53%);
+  --chart-2: hsl(173, 58%, 39%);
+  --chart-3: hsl(197, 37%, 24%);
+  --chart-4: hsl(43, 74%, 66%);
+  --chart-5: hsl(27, 87%, 67%);
+  --sidebar: hsl(220, 13%, 12%);
+  --sidebar-foreground: hsl(0, 0%, 95%);
+  --sidebar-primary: hsl(24, 90%, 53%);
+  --sidebar-primary-foreground: hsl(0, 0%, 100%);
+  --sidebar-accent: hsl(220, 13%, 15%);
+  --sidebar-accent-foreground: hsl(0, 0%, 95%);
+  --sidebar-border: hsl(220, 13%, 18%);
+  --sidebar-ring: hsl(24, 90%, 53%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans;
+  }
+}
+
+@layer components {
+  .progress-ring {
+    transform: rotate(-90deg);
+  }
+  
+  .progress-ring-circle {
+    transition: stroke-dashoffset 0.35s;
+    transform-origin: 50% 50%;
+  }
+
+  .difficulty-easy {
+    @apply bg-green-500/20 text-green-400 hover:bg-green-500/30;
+  }
+  
+  .difficulty-medium {
+    @apply bg-yellow-500/20 text-yellow-400 hover:bg-yellow-500/30;
+  }
+  
+  .difficulty-hard {
+    @apply bg-red-500/20 text-red-400 hover:bg-red-500/30;
+  }
+
+  .calendar-day {
+    @apply transition-all duration-200 ease-in-out;
+  }
+  
+  .calendar-day:hover {
+    @apply bg-muted;
+  }
+  
+  .streak-day {
+    @apply bg-primary/70 text-primary-foreground;
+  }
+
+  .completion-checkbox:checked + .checkmark {
+    @apply bg-primary;
+  }
+
+  .sidebar-item:hover {
+    @apply bg-muted/50;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary));
+}
